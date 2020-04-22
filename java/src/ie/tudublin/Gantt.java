@@ -9,7 +9,7 @@ import processing.data.TableRow;
 
 public class Gantt extends PApplet
 {
-	ArrayList<Task> tk = new ArrayList<Task>();
+	ArrayList<Task> tk = new ArrayList<>();
 
 	
 	public void settings()

@@ -10,10 +10,11 @@ import processing.data.TableRow;
 public class Gantt extends PApplet
 {
 	ArrayList<Task> tk = new ArrayList<Task>();
+
 	
 	public void settings()
 	{
-		size(800, 600);
+		size(1000, 600);
 	}
 
 	public void loadTasks()
@@ -37,6 +38,49 @@ public class Gantt extends PApplet
 	public void displayTasks()
 	{
 		colorMode(HSB);
+
+		float y;
+		float gap;
+		int days = 30;
+
+		textAlign(CENTER,CENTER);
+
+		fill(255);
+		stroke(255);
+		for(int i = 1; i <= days; i++)
+		{
+			y = map(i,0, days + 5, 50, this.width + 50);
+			textSize(15);
+			text(i, y, 5);
+			line(y, 25, y,  this.height);
+		}
+
+		textAlign(LEFT, CENTER);
+		float rectH = 30;
+		float roundEdge = 5;
+
+		for(int i = 0; i < tk.size(); i++)
+		{
+			gap = map(i, 0, tk.size(), 50, height);
+
+			stroke(255);
+			fill(255);
+			Task t = tk.get(i);
+			text(t.getTask(), 0, gap);
+
+			fill(map(i, 0, tk.size(), 0, 255), 255, 255);
+			noStroke();
+
+			float tStart = map(t.getStart(), 2, 30, 105, width - 100);
+			float tEnd = map(t.getEnd(), 2, 30, 105, width - 100);
+			rect(
+					tStart,
+					gap - 15,
+					abs(tStart - tEnd),
+					rectH,
+					roundEdge
+			);
+		}
 
 	}
 	

@@ -40,4 +40,9 @@ public class Gantt extends PApplet
 	{			
 		background(0);
 	}
+
+
+	public static void main (String...args){
+		PApplet.main("ie.tudublin.Gantt");
+	}
 }

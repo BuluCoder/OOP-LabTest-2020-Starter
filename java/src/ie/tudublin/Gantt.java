@@ -71,12 +71,12 @@ public class Gantt extends PApplet
 			fill(map(i, 0, tk.size(), 0, 255), 255, 255);
 			noStroke();
 
-			float tStart = map(t.getStart(), 2, 30, 105, width - 100);
-			float tEnd = map(t.getEnd(), 2, 30, 105, width - 100);
+			float theStart = map(t.getStart(), 2, 30, 105, width - 100);
+			float theEnd = map(t.getEnd(), 2, 30, 105, width - 100);
 			rect(
-					tStart,
+					theStart,
 					gap - 15,
-					abs(tStart - tEnd),
+					abs(theStart - theEnd),
 					rectH,
 					roundEdge
 			);

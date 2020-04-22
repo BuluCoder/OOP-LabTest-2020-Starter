@@ -33,6 +33,12 @@ public class Gantt extends PApplet
 				System.out.println(tk);
 		}
 	}
+
+	public void displayTasks()
+	{
+		colorMode(HSB);
+
+	}
 	
 	public void mousePressed()
 	{
@@ -55,6 +61,7 @@ public class Gantt extends PApplet
 	public void draw()
 	{			
 		background(0);
+		displayTasks();
 	}
 
 
